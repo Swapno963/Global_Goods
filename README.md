@@ -6,7 +6,7 @@ This is a comprehensive e-commerce platform developed using Next.js, React, and 
 
 ### email:swapno@gmail.com password:12
 
-### Live site : https://lwskart-nine.vercel.app/en
+### Live site : https://global-goods-j1j856xxk-swapnos-projects.vercel.app/en
 
 ## Features
 
@@ -70,7 +70,7 @@ The home page and product details pages are SEO-friendly
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/Swapno963/lwskart.git
+   git clone https://github.com/Swapno963/Global_Goods.git
    cd lwskart
    ```
 
