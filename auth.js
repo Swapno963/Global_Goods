@@ -44,7 +44,7 @@ async function refreshAccessToken(token) {
 
     return {
       ...token,
-      // error: "RefreshAccessTokenError",
+      error: "RefreshAccessTokenError",
     };
   }
 }
@@ -102,6 +102,19 @@ export const {
   // for jwt token handel
   callbacks: {
     async jwt({ token, user, account }) {
+      // this is for credential login
+      if (account?.provider !== "google") {
+        console.log(
+          "Inside jwt, Token:",
+          token,
+          "\nuser:",
+          user,
+          "\naccount:",
+          account
+        );
+        return { token, user, account };
+      }
+
       console.log(`JWT token: ${JSON.stringify(token)}`);
       console.log(`JWT Account: ${JSON.stringify(account)}`);
 
@@ -128,6 +141,11 @@ export const {
     },
 
     async session({ session, token }) {
+      console.log("Inside session, Session:", session, "\ntoken:", token);
+      if (token?.account?.provider !== "google") {
+        console.log("email is:", token?.token);
+        return { user: token?.token?.user };
+      }
       session.user = token?.user;
       session.accessToken = token?.access_token;
       session.error = token?.error;

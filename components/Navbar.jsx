@@ -28,6 +28,9 @@ export default async function Navbar() {
   // if(!session){
 
   // }
+  console.clear();
+
+  console.log("session?.user", session?.user);
   return (
     <>
       <div className=" w-full ">
