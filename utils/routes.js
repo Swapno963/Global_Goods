@@ -4,7 +4,8 @@ export const ROOT = "/";
 export const PUBLIC_ROUTES = [
   "/en/login",
   "/bn/login",
-  "/register",
+  "/en/register",
+  "/bn/register",
   "/en/category",
   "/bn/category",
   "/en/product",
