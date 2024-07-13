@@ -164,9 +164,8 @@ export default function RegisterForm() {
             </div>
             <div className="absolute left-0 top-3 w-full border-b-2 border-gray-200"></div>
           </div>
-          <SocialLogins />
           {/* <!-- ./login with --> */}
-
+          <SocialLogins />
           <p className="mt-4 text-center text-gray-600">
             Already have account?{" "}
             <a href="login.html" className="text-primary">

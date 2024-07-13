@@ -30,7 +30,7 @@ export default function SearchAndFilterArea({
       });
       // res.status === 201 && router.push("/checkout");
       const data = await response.json();
-      console.log("Search results:", data);
+      console.log("Search results:", data, "\nshowResult:", showResult);
       setShowResult(data);
       // console.log(res);
     } catch (error) {
@@ -49,9 +49,11 @@ export default function SearchAndFilterArea({
           allCategoryData={allCategoryData}
           filterOption={filterOption}
           setSearchFilterOption={setSearchFilterOption}
+          // showing the filter options of products
+          showResult={showResult}
         />
       </div>
-      <div className="col-span-8 bg-gray-300">
+      <div className="pl-12 col-span-8 bg-gray-300">
         <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">
           Reasult
         </h2>

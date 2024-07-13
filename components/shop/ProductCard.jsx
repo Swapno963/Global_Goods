@@ -49,24 +49,7 @@ export default function ProductCard({ product }) {
           </p>
         </div>
         <div className="flex items-center">
-          <div className="flex gap-1 text-sm text-yellow-400">
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-          </div>
-          <div className="text-xs text-gray-500 ml-1">
+          <div className="text-xs text-gray-500 ">
             Review : ({product?.reviewCount})
           </div>
         </div>

@@ -4,6 +4,7 @@ export default function Sidebar({
   allCategoryData,
   filterOption,
   setSearchFilterOption,
+  showResult,
 }) {
   return (
     <div className="col-span-1 bg-white px-4 pb-6 shadow rounded overflow-hiddenb  md:block">
@@ -85,81 +86,28 @@ export default function Sidebar({
             size
           </h3>
           <div className="flex items-center gap-2">
-            <div className="size-selector">
-              <input type="radio" name="size" id="size-xs" className="hidden" />
-              <label
-                onClick={(e) =>
-                  setSearchFilterOption({
-                    ...filterOption,
-                    size: "xs",
-                  })
-                }
-                htmlFor="size-xs"
-                className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
-              >
-                XS
-              </label>
-            </div>
-            <div className="size-selector">
-              <input type="radio" name="size" id="size-sm" className="hidden" />
-              <label
-                onClick={(e) =>
-                  setSearchFilterOption({
-                    ...filterOption,
-                    size: "s",
-                  })
-                }
-                htmlFor="size-sm"
-                className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
-              >
-                S
-              </label>
-            </div>
-            <div className="size-selector">
-              <input type="radio" name="size" id="size-m" className="hidden" />
-              <label
-                onClick={(e) =>
-                  setSearchFilterOption({
-                    ...filterOption,
-                    size: "m",
-                  })
-                }
-                htmlFor="size-m"
-                className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
-              >
-                M
-              </label>
-            </div>
-            <div className="size-selector">
-              <input type="radio" name="size" id="size-l" className="hidden" />
-              <label
-                onClick={(e) =>
-                  setSearchFilterOption({
-                    ...filterOption,
-                    size: "l",
-                  })
-                }
-                htmlFor="size-l"
-                className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
-              >
-                L
-              </label>
-            </div>
-            <div className="size-selector">
-              <input type="radio" name="size" id="size-xl" className="hidden" />
-              <label
-                onClick={(e) =>
-                  setSearchFilterOption({
-                    ...filterOption,
-                    size: "xl",
-                  })
-                }
-                htmlFor="size-xl"
-                className="text-xs border border-gray-200 rounded-sm h-6 w-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
-              >
-                XL
-              </label>
-            </div>
+            {showResult?.map((pd) => (
+              <div key={pd?._id} className="size-selector">
+                <input
+                  type="radio"
+                  name="size"
+                  id="size-xs"
+                  className="hidden"
+                />
+                <label
+                  onClick={(e) =>
+                    setSearchFilterOption({
+                      ...filterOption,
+                      size: `${pd?.size}`,
+                    })
+                  }
+                  htmlFor="size-xs"
+                  className="text-xs border border-gray-200 rounded-sm h-6 flex items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                >
+                  {pd?.size}
+                </label>
+              </div>
+            ))}
           </div>
         </div>
       </div>
