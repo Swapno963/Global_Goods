@@ -52,8 +52,11 @@ export default function BillingModal({
           Close
         </button>
         <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="billing_name" className="text-gray-600">
+          <div className="mb-4">
+            <label
+              htmlFor="billing_name"
+              className="text-gray-600block text-gray-800 font-medium mb-2"
+            >
               Billing Name
             </label>
             <input
@@ -65,8 +68,11 @@ export default function BillingModal({
               className="input-box"
             />
           </div>
-          <div>
-            <label htmlFor="billing_address" className="text-gray-600">
+          <div className="mb-4">
+            <label
+              htmlFor="billing_address"
+              className="text-gray-600block text-gray-800 font-medium mb-2"
+            >
               Billing Address
             </label>
             <input
@@ -78,8 +84,11 @@ export default function BillingModal({
               className="input-box"
             />
           </div>
-          <div>
-            <label htmlFor="billing_phone_no" className="text-gray-600">
+          <div className="mb-4">
+            <label
+              htmlFor="billing_phone_no"
+              className="block text-gray-800 font-medium mb-2"
+            >
               Billing No
             </label>
             <input
@@ -92,12 +101,14 @@ export default function BillingModal({
             />
           </div>
 
-          <button
-            onClick={handelSubmit}
-            className="bg-green-400 text-white font-bold rounded-md py-2 px-3"
-          >
-            Submit
-          </button>
+          <div className="mt-6 pl-12">
+            <button
+              onClick={handelSubmit}
+              className="bg-green-400 py-4 px-8 text-white font-bold rounded-md  text-xl"
+            >
+              Submit
+            </button>
+          </div>
         </div>
       </div>
     </div>

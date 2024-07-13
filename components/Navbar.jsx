@@ -74,12 +74,24 @@ export default async function Navbar() {
                   </div>
                 </>
               ) : (
-                <a
-                  href="/login"
-                  className="text-gray-200 hover:text-white transition"
-                >
-                  Login
-                </a>
+                <>
+                  <button className=" rounded-md  pl-7 py-3">
+                    <a
+                      href="/login"
+                      className=" font-bold text-gra hover:text-blue-600 transition"
+                    >
+                      Login
+                    </a>
+                  </button>
+                  <button className=" rounded-md   py-3">
+                    <a
+                      href="/register"
+                      className=" font-bold text-gra hover:text-blue-600 transition"
+                    >
+                      Register
+                    </a>
+                  </button>
+                </>
               )}
             </div>
           </div>
@@ -132,7 +144,7 @@ export default async function Navbar() {
                 >
                   Shop
                 </a>
-                <a
+                {/* <a
                   href="#"
                   className="text-gray-200 hover:text-white transition"
                 >
@@ -158,7 +170,7 @@ export default async function Navbar() {
                   className="pl-3 text-gray-200 hover:text-white transition"
                 >
                   Register
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

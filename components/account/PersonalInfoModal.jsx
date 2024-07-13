@@ -29,7 +29,7 @@ export default function PersonalInfoModal({
       });
       if (res.status === 201) {
         toast.success("Billing Address Updated!");
-        setShowB(!showB);
+        setShowP(!showP);
       }
     } catch (error) {
       console.error(error);
@@ -48,52 +48,64 @@ export default function PersonalInfoModal({
           Close
         </button>
         <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="company" className="text-gray-600">
-              personal_name
+          <div className="mb-4">
+            <label
+              htmlFor="personal_name"
+              className="block text-gray-800 font-medium mb-2"
+            >
+              Personal Name
             </label>
             <input
               onChange={hadelBlur}
-              value={accountInfo?.personal_name}
+              value={accountInfo?.personal_name || ""}
               type="text"
               name="personal_name"
-              id="company"
-              className="input-box"
-            />
-          </div>
-          <div>
-            <label htmlFor="region" className="text-gray-600">
-              personal_email
-            </label>
-            <input
-              onChange={hadelBlur}
-              value={accountInfo?.personal_email}
-              type="text"
-              name="personal_email"
-              id="region"
-              className="input-box"
-            />
-          </div>
-          <div>
-            <label htmlFor="address" className="text-gray-600">
-              personal_phone_nos
-            </label>
-            <input
-              onChange={hadelBlur}
-              value={accountInfo?.personal_phone_no}
-              type="text"
-              name="personal_phone_no"
-              id="address"
-              className="input-box"
+              id="personal_name"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
-          <button
-            onClick={handelSubmit}
-            className="bg-green-400 text-white font-bold rounded-md py-2 px-3"
-          >
-            Submit
-          </button>
+          <div className="mb-4">
+            <label
+              htmlFor="personal_email"
+              className="block text-gray-600 font-medium mb-2"
+            >
+              Personal Email
+            </label>
+            <input
+              onChange={hadelBlur}
+              value={accountInfo?.personal_email || ""}
+              type="text"
+              name="personal_email"
+              id="personal_email"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label
+              htmlFor="personal_phone_no"
+              className="block text-gray-600 font-medium mb-2"
+            >
+              Personal Phone Number
+            </label>
+            <input
+              onChange={hadelBlur}
+              value={accountInfo?.personal_phone_no || ""}
+              type="text"
+              name="personal_phone_no"
+              id="personal_phone_no"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div className="mt-6 pl-12">
+            <button
+              onClick={handelSubmit}
+              className="bg-green-400 py-4 px-8 text-white font-bold rounded-md  text-xl"
+            >
+              Submit
+            </button>
+          </div>
         </div>
       </div>
     </div>
