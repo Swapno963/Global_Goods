@@ -100,58 +100,61 @@ export const {
     }),
   ],
   // for jwt token handel
-  callbacks: {
-    async jwt({ token, user, account }) {
-      // this is for credential login
-      if (account?.provider !== "google") {
-        console.log(
-          "Inside jwt, Token:",
-          token,
-          "\nuser:",
-          user,
-          "\naccount:",
-          account
-        );
-        return { token, user, account };
-      }
+  // callbacks: {
+  //   async jwt({ token, user, account }) {
+  //     // this is for credential login
+  //     if (account?.provider !== "google") {
+  //       console.log(
+  //         "Inside jwt, Token:",
+  //         token,
+  //         "\nuser:",
+  //         user,
+  //         "\naccount:",
+  //         account
+  //       );
+  //       return { token, user, account };
+  //       // return { token };
+  //     }
 
-      console.log(`JWT token: ${JSON.stringify(token)}`);
-      console.log(`JWT Account: ${JSON.stringify(account)}`);
+  //     console.log(`JWT token: ${JSON.stringify(token)}`);
+  //     console.log(`JWT Account: ${JSON.stringify(account)}`);
 
-      if (account && user) {
-        return {
-          accessToken: account?.access_token,
-          accessTokenExpires: Date.now() + account?.expires_in * 1000,
-          refreshToken: account?.refresh_token,
-          user,
-        };
-      }
+  //     if (account && user) {
+  //       return {
+  //         accessToken: account?.access_token,
+  //         accessTokenExpires: Date.now() + account?.expires_in * 1000,
+  //         refreshToken: account?.refresh_token,
+  //         user,
+  //       };
+  //     }
 
-      console.log(
-        `Token Will Expire at ${new Date(token.accessTokenExpires)})`
-      );
+  //     console.log(
+  //       `Token Will Expire at ${new Date(token.accessTokenExpires)})`
+  //     );
 
-      if (Date.now() < token?.accessTokenExpires) {
-        console.log(`At ${new Date(Date.now())}, Using old access token`);
-        return token;
-      }
+  //     if (Date.now() < token?.accessTokenExpires) {
+  //       console.log(`At ${new Date(Date.now())}, Using old access token`);
+  //       return token;
+  //     }
 
-      console.log(`Token Expired at ${new Date(Date.now())}`);
-      return refreshAccessToken(token);
-    },
+  //     console.log(`Token Expired at ${new Date(Date.now())}`);
+  //     return refreshAccessToken(token);
+  //   },
 
-    async session({ session, token }) {
-      console.log("Inside session, Session:", session, "\ntoken:", token);
-      if (token?.account?.provider !== "google") {
-        console.log("email is:", token?.token);
-        return { user: token?.token?.user };
-      }
-      session.user = token?.user;
-      session.accessToken = token?.access_token;
-      session.error = token?.error;
+  //   async session({ session, token }) {
+  //     console.log("Inside session, Session:", session, "\ntoken:", token);
+  //     if (token?.account?.provider !== "google") {
+  //       console.log("email is:", token?.token);
+  //       // return { user: token?.token?.user };
+  //       session.user = token?.token?.user;
+  //       return session;
+  //     }
+  //     session.user = token?.user;
+  //     session.accessToken = token?.access_token;
+  //     session.error = token?.error;
 
-      console.log(`Returning Session ${JSON.stringify(session)}`);
-      return session;
-    },
-  },
+  //     console.log(`Returning Session ${JSON.stringify(session)}`);
+  //     return session;
+  //   },
+  // },
 });
