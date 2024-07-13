@@ -65,6 +65,10 @@ This is a comprehensive e-commerce platform developed using Next.js, React, and 
 
 The home page and product details pages are SEO-friendly
 
+### Chellenges
+
+1. Chnage client ui besed on server side props(In NavWish_Cart.jsx)
+
 ## Installation
 
 1. Clone the repository:

@@ -13,10 +13,21 @@ import Signout from "./auth/Signout";
 // import globalGoods from "."
 export default async function Navbar() {
   const session = await auth();
-  // console.log("from navbar", session);
   const allCategoryData = await getAllCategory();
   const cartList = await getProductForCheckout(session?.user?.email);
   const wishList = await getProductForNavbar(session?.user?.email);
+  // setMyCart(cartList);
+  console.log(
+    "from navbar",
+    session,
+    "cartList",
+    cartList,
+    "wishList\n:",
+    wishList
+  );
+  // if(!session){
+
+  // }
   return (
     <>
       <div className=" w-full ">
@@ -129,6 +140,7 @@ export default async function Navbar() {
                   Contact us
                 </a>
               </div>
+
               <div>
                 <a
                   href="/login"

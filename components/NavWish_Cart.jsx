@@ -1,15 +1,20 @@
 "use client";
-import { useCart } from "@/app/hooks/useCart";
-import { useWishList } from "@/app/hooks/useWishList";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function NavWish_Cart({ cartL, wishL }) {
-  const { cart, setCart } = useCart();
-  const { wishList, setWishList } = useWishList();
+  // const { cart, setCart } = useCart();
+  // const { wishList, setWishList } = useWishList();
+  // useEffect(() => {
+  //   setCart(cartL?.length);
+  //   setWishList(wishL?.length);
+  // }, []);
+  const [myCart, setMyCart] = useState(cartL);
+  const [myWish, setMyWish] = useState(wishL);
+
   useEffect(() => {
-    setCart(cartL?.length);
-    setWishList(wishL?.length);
-  }, []);
+    setMyCart(cartL);
+    setMyWish(wishL);
+  }, [cartL, wishL]);
 
   return (
     <>
@@ -23,7 +28,7 @@ export default function NavWish_Cart({ cartL, wishL }) {
         </div>
         <div className="text-xs leading-3">Wishlist</div>
         <div className="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-          {wishList}
+          {myWish?.length}
         </div>
       </a>
 
@@ -37,7 +42,7 @@ export default function NavWish_Cart({ cartL, wishL }) {
         </div>
         <div className="text-xs leading-3">Cart</div>
         <div className="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-          {cart}
+          {myCart?.length}
         </div>
       </a>
     </>
