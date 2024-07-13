@@ -1,9 +1,6 @@
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import NextAuth from "next-auth";
 import { NextResponse } from "next/server";
-import { authConfig } from "./auth.config";
-import { LOGIN, PUBLIC_ROUTES, ROOT } from "./utils/routes";
 
 let defaultLocale = "en";
 let locales = ["bn", "en"];
@@ -34,51 +31,31 @@ export function middleware(request) {
   }
 
   // for privet route
-  const { auth } = NextAuth(authConfig);
-  const { nextUrl } = request;
-  // console.log("req from auth", request);
-  const isAuthenticated = !!request.auth;
+  //   const { auth } = NextAuth(authConfig);
+  //   const { nextUrl } = request;
+  //   // console.log("req from auth", request);
+  //   const isAuthenticated = !!request.auth;
 
-  console.log("isAuthenticated", isAuthenticated);
+  //   console.log("isAuthenticated", isAuthenticated);
 
-  const isPublicRoute =
-    PUBLIC_ROUTES.find((route) => nextUrl.pathname.startsWith(route)) ||
-    nextUrl.pathname == ROOT ||
-    nextUrl.pathname == "/en" ||
-    nextUrl.pathname == "/bn";
+  //   const isPublicRoute =
+  //     PUBLIC_ROUTES.find((route) => nextUrl.pathname.startsWith(route)) ||
+  //     nextUrl.pathname == ROOT ||
+  //     nextUrl.pathname == "/en" ||
+  //     nextUrl.pathname == "/bn";
 
-  console.log(" nextUrl.pathname", nextUrl.pathname, "isPublicRoute", {
-    isPublicRoute,
-  });
+  //   console.log(" nextUrl.pathname", nextUrl.pathname, "isPublicRoute", {
+  //     isPublicRoute,
+  //   });
 
-  if (!isAuthenticated && !isPublicRoute)
-    return Response.redirect(new URL(LOGIN, nextUrl));
+  //   if (!isAuthenticated && !isPublicRoute)
+  //     return Response.redirect(new URL(LOGIN, nextUrl));
 }
 
-// for protected rotes
-// const { auth } = NextAuth(authConfig);
-
-// export default auth((req) => {
-
-//   const { nextUrl } = req;
-//   console.log("req from auth", req);
-//   const isAuthenticated = !!req.auth;
-
-//   console.log(isAuthenticated, nextUrl.pathname);
-
-//   const isPublicRoute =
-//     PUBLIC_ROUTES.find((route) => nextUrl.pathname.startsWith(route)) ||
-//     nextUrl.pathname === ROOT;
-
-//   console.log("isPublicRoute", { isPublicRoute });
-
-//   if (!isAuthenticated && !isPublicRoute)
-//     return Response.redirect(new URL(LOGIN, nextUrl));
-// });
 export const config = {
   matcher: [
     "/((?!api|assets|.*\\..*|_next).*)",
-    '/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)',
+    // '/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)',
     // '/'
   ],
 };
