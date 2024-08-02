@@ -45,7 +45,7 @@ export default function AddTooCart({ product, session, quantity }) {
 
       <p
         onClick={handelClick}
-        className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition hover:cursor-pointer"
+        className="bg-base border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition hover:cursor-pointer"
       >
         Add to cart
       </p>

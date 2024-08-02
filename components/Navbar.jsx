@@ -5,7 +5,6 @@ import {
   getProductForCheckout,
   getProductForNavbar,
 } from "@/database/queries";
-import Image from "next/image";
 import NavSearch from "./NavSearch";
 import NavWish_Cart from "./NavWish_Cart";
 import Signout from "./auth/Signout";
@@ -34,12 +33,80 @@ export default async function Navbar() {
 
   return (
     <>
-      <div className="w-full">
+      <div>
+        <div className="w-full sm:w-4/5 mx-auto flex-row sm:flex sm:justify-around  justify-around items-center bg-base rounded-md md:py-6">
+          <div className="flex justify-center">
+            {/* <Image
+              width={120}
+              height={50}
+              src="/global_goods.png"
+              alt="Global Goods Logo"
+              className="object-none overflow-hidden"
+            />{" "} */}
+            <h2 className="text-white font-extrabold text-3xl">
+              Global <br /> Goods
+            </h2>
+          </div>
+          <div className="flex justify-center">
+            <div className="w-full">
+              <NavSearch />
+            </div>
+          </div>
+          <div className="flex justify-center  text-white font-bold gap-8">
+            <NavWish_Cart cartL={cartList} wishL={wishList} />
+
+            {session?.user ? (
+              <>
+                {console.log(
+                  "Inside JSX: session?.user?.email",
+                  session?.user?.email
+                )}
+                <a
+                  href="/account"
+                  className="text-center text-gray-700 hover:text-primary transition relative"
+                >
+                  <div className="text-2xl">
+                    <i className="fa-regular fa-user"></i>
+                  </div>
+                  <div className="text-xs leading-3">
+                    Account | {session?.user?.name} {session?.user?.email}
+                  </div>
+                </a>
+                <div className="text-md leading-3 font-bold text-red-600">
+                  <Signout />
+                </div>
+              </>
+            ) : (
+              <>
+                <button className=" rounded-md  pl-7 py-3">
+                  <a
+                    href="/login"
+                    className=" font-bold text-gra hover:text-blue-600 transition"
+                  >
+                    Login
+                  </a>
+                </button>
+                <button className=" rounded-md   py-3">
+                  <a
+                    href="/register"
+                    className=" font-bold text-gra hover:text-blue-600 transition"
+                  >
+                    Register
+                  </a>
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* new nav end  */}
+      {/* <div className="w-full">
         <header className="py-4 shadow-sm bg-white">
           <div className="container flex items-center justify-between">
             <a href="/" className="h-32 w-[175px]">
               <Image
-                width={200}
+                width={120}
                 height={100}
                 src="/global_goods.png"
                 alt="Global Goods Logo"
@@ -49,7 +116,6 @@ export default async function Navbar() {
 
             <NavSearch />
             <div className="flex items-center space-x-4">
-              {/* <NavInfo session={session} /> */}
               <NavWish_Cart cartL={cartList} wishL={wishList} />
 
               {session?.user ? (
@@ -106,7 +172,7 @@ export default async function Navbar() {
               <span className="capitalize ml-2 text-white">All Categories</span>
 
               <div
-                className="absolute left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300  group-hover:visible w-[600px]"
+                className=" hover:block absolute left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300  group-hover:visible w-[600px]"
                 style={{ width: "300px" }}
               >
                 {allCategoryData?.map((cat) => (
@@ -144,38 +210,11 @@ export default async function Navbar() {
                 >
                   Shop
                 </a>
-                {/* <a
-                  href="#"
-                  className="text-gray-200 hover:text-white transition"
-                >
-                  About us
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-200 hover:text-white transition"
-                >
-                  Contact us
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="/login"
-                  className="text-gray-200 hover:text-white transition"
-                >
-                  Login
-                </a>
-                <a
-                  href="/register"
-                  className="pl-3 text-gray-200 hover:text-white transition"
-                >
-                  Register
-                </a> */}
               </div>
             </div>
           </div>
         </nav>
-      </div>
+      </div> */}
     </>
   );
 }
