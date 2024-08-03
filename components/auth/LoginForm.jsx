@@ -27,7 +27,7 @@ export default function LoginForm() {
       const redirect = router?.query?.redirect || "/";
       router.push(redirect);
     } catch (error) {
-      toast.warn("Plese Register first!");
+      // toast.warn("Plese Register first!");
       console.log(error);
     }
   }
