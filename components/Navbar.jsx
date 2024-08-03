@@ -28,8 +28,8 @@ export default async function Navbar() {
       "wishList\n:",
       wishList
     );
-    console.log("session?.user", session?.user);
   }
+  console.log("session?.user", session);
 
   return (
     <>
@@ -43,14 +43,12 @@ export default async function Navbar() {
               alt="Global Goods Logo"
               className="object-none overflow-hidden"
             />{" "} */}
-            <h2 className="text-white font-extrabold text-3xl">
+            <a href="/" className="text-white font-extrabold text-3xl">
               Global <br /> Goods
-            </h2>
+            </a>
           </div>
-          <div className="flex justify-center">
-            <div className="w-full">
-              <NavSearch />
-            </div>
+          <div className="md:w-[45%]">
+            <NavSearch />
           </div>
           <div className="flex justify-center  text-white font-bold gap-8">
             <NavWish_Cart cartL={cartList} wishL={wishList} />
@@ -63,13 +61,16 @@ export default async function Navbar() {
                 )}
                 <a
                   href="/account"
-                  className="text-center text-gray-700 hover:text-primary transition relative"
+                  className="text-center text-gray-100 hover:text-primary transition relative"
                 >
                   <div className="text-2xl">
                     <i className="fa-regular fa-user"></i>
                   </div>
                   <div className="text-xs leading-3">
-                    Account | {session?.user?.name} {session?.user?.email}
+                    Account |{" "}
+                    {session?.user?.name
+                      ? session?.user?.name
+                      : session?.user?.email?.split("@")[0]}
                   </div>
                 </a>
                 <div className="text-md leading-3 font-bold text-red-600">

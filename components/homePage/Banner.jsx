@@ -17,13 +17,7 @@ export default async function Banner({ lang }) {
     { id: 11, name: "WSports & Outdoors" },
     { id: 12, name: "Automotive & Motorbike" },
   ];
-  const slides = [
-    "/top-1.jpg",
-    "/top-2.png",
-    "/top-3.jpg",
-    "/top-4.jpg",
-    "/top-5.jpg",
-  ];
+  const slides = ["/top-1.jpg", "/top-3.jpg", "/top-4.jpg", "/top-5.jpg"];
   return (
     // <div
     //   className="bg-cover bg-no-repeat bg-center py-36"
@@ -54,14 +48,14 @@ export default async function Banner({ lang }) {
     // </div>
     // starts
     <div className=" w-4/5 grid grid-cols-12 min-h-40 mx-auto gap-4">
-      <div className="bg-gray-100 rounded-md  sm:col-span-2 col-span-12 pl-4 my-12  py-3 max-h-[70%]">
+      <div className="col-span-12  md:col-span-3 monitor:col-span-2 bg-gray-100 rounded-md     pl-4 my-12  py-3 max-h-[70%]">
         {category?.map((ct) => (
           <p key={ct?.id} className="text-gray-500 text-lg pb-1 font-semibold">
             {ct?.name}
           </p>
         ))}
       </div>
-      <div className="col-span-12 mt-6 rounded-md sm:col-span-10  py-6">
+      <div className="col-span-12 md:col-span-9 monitor:col-span-10 mt-6 rounded-md    py-6">
         <TopBannerCarosel slides={slides} />
       </div>
     </div>

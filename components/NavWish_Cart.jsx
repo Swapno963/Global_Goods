@@ -27,7 +27,7 @@ export default function NavWish_Cart({ cartL, wishL }) {
           <i className="fa-regular fa-heart"></i>
         </div> */}
         <div className="text-xs leading-3 text-gray-300">Wishlist</div>
-        <div className="absolute right-[-23px] top-3 w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs">
+        <div className="absolute right-[-23px] top-[-2px] w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs">
           {!myWish?.length ? "0" : myWish?.length}
         </div>
       </a>
@@ -38,7 +38,7 @@ export default function NavWish_Cart({ cartL, wishL }) {
         className=" pl-3 text-center text-gray-300 hover:text-primary transition relative flex justify-center items-center"
       >
         <div className="text-xs leading-3">Cart</div>
-        <div className="absolute right-[-23px] top-3 w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs">
+        <div className="absolute right-[-23px] top-[-2px] w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs">
           {!myCart?.length ? "0" : myCart?.length}
         </div>
       </a>

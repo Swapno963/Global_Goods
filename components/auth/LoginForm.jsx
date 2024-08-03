@@ -31,6 +31,23 @@ export default function LoginForm() {
       console.log(error);
     }
   }
+
+  const handelDemoLogin = async () => {
+    try {
+      const response = await login({
+        email: "swapno@gmail.com",
+        password: "12",
+      });
+
+      console.log("response from login:", response);
+      console.log("router is :", router?.query);
+      const redirect = router?.query?.redirect || "/";
+      router.push(redirect);
+    } catch (error) {
+      toast.warn("Plese Register first!");
+      console.log(error);
+    }
+  };
   return (
     <>
       <ToastContainer />
@@ -90,6 +107,13 @@ export default function LoginForm() {
                 className="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium"
               >
                 Login
+              </button>
+              <button
+                onClick={handelDemoLogin}
+                type="submit2"
+                className="my-2 block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium"
+              >
+                Demo Login
               </button>
             </div>
           </form>

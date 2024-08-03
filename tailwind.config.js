@@ -9,11 +9,13 @@ module.exports = {
     colors: {
       base: "#F85606",
     },
-    screen: {
+    screens: {
       sm: "576px",
       md: "768px",
       lg: "992px",
       xl: "1200px",
+      laptop: "1600px", // Custom for your laptop
+      monitor: "2133px",
     },
     container: {
       center: true,

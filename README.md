@@ -1,12 +1,19 @@
-# E-commerce Platform : GlobalGoods
+# GlobalGoods : E-commerce Platform
 
 ## Overview
 
 This is a comprehensive e-commerce platform developed using Next.js, React, and Tailwind CSS. The platform includes user authentication, product listings, a detailed product view, and shopping cart functionality, among other features. It is designed to be responsive, SEO-friendly, and includes internationalization for both Bengali and English.
 
-### email:swapno@gmail.com password:12
+## Live Site
 
-### Live site : https://global-goods-j1j856xxk-swapnos-projects.vercel.app/en
+You can access the live site [here](https://global-goods-j1j856xxk-swapnos-projects.vercel.app/en).
+
+## User Login
+
+To log in as a user, please use the following credentials:
+
+- **Email:** swapno@gmail.com
+- **Password:** 12
 
 ## Features
 
@@ -69,35 +76,6 @@ The home page and product details pages are SEO-friendly
 
 1. Chnage client ui besed on server side props(In NavWish_Cart.jsx)
 
-## Installation
-
-1. Clone the repository:
-
-   ```sh
-   git clone https://github.com/Swapno963/Global_Goods.git
-   cd lwskart
-   ```
-
-2. Install dependencies:
-
-   ```sh
-   npm install
-   ```
-
-3. Create a `.env` file for environment variables:
-
-4. Run the development server:
-   ```sh
-   npm run dev
-   ```
-
-## Usage
-
-- Access the application at `http://localhost:3000`
-- Register a new user or login with existing credentials.
-- Browse products, add to cart or wishlist, and complete orders.
-- Update personal information and view order history in the account section.
-
 ## Technologies Used
 
 - **Next.js**: Framework for server-rendered React applications.
@@ -108,3 +86,16 @@ The home page and product details pages are SEO-friendly
 - **JWT**: JSON Web Tokens for authentication.
 - **PDF-LIB**: Library for PDF generation.
 - **Nodemailer**: For sending emails.
+
+### Up Comming
+
+- Edit bio in profile page
+- Update profile picture
+- Animation while dark mode to light mode
+- Edit blog in profile page
+- Delete blog in profile page
+
+### Future Plan
+
+- Product recomendation system where ml model will do it
+- User can run add besed on terget customer

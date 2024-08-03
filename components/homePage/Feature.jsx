@@ -7,7 +7,7 @@ export default async function Feature({ lang }) {
   return (
     <div className="container py-16">
       <div className="w-10/12 grid grid-cols-1 md:grid-cols-3 gap-6 mx-auto justify-center">
-        <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+        <div className="border border-base rounded-sm px-3 py-6 flex justify-center items-center gap-5">
           <Image
             width={150}
             height={100}

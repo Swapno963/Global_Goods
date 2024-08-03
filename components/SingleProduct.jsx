@@ -12,7 +12,7 @@ export default async function SingleProduct({ product }) {
       <ProductSchemaScript product={product} />
       <div className="relative">
         <Image
-          width={150}
+          width={250}
           height={100}
           src={product?.img_url[0]}
           alt="Food image"
