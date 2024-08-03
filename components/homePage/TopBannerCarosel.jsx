@@ -44,7 +44,7 @@ export default function TopBannerCarosel({ slides }) {
   };
 
   return (
-    <div className="overflow-hidden relative max-h-[80%]">
+    <div className="overflow-hidden relative max-h-[80%] ">
       <div style={styles.container}>
         {slides?.map((s) => {
           // <img style={styles.image} key={s} src={s} />
@@ -56,7 +56,7 @@ export default function TopBannerCarosel({ slides }) {
               height={300}
               src={s}
               alt="Global Goods Logo"
-              className="object-none overflow-hidden"
+              className="object-none overflow-hidden "
             />
           );
         })}

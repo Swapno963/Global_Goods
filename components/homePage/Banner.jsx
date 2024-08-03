@@ -55,7 +55,7 @@ export default async function Banner({ lang }) {
           </p>
         ))}
       </div>
-      <div className="col-span-12 md:col-span-9 monitor:col-span-10 mt-6 rounded-md    py-6">
+      <div className="col-span-12 md:col-span-9 monitor:col-span-10 mt-6     py-6">
         <TopBannerCarosel slides={slides} />
       </div>
     </div>
