@@ -8,7 +8,7 @@ export default async function SingleProduct({ product }) {
   const session = await auth();
 
   return (
-    <div className="bg-white shadow rounded overflow-hidden group">
+    <div className="bg-white shadow rounded overflow-hidden group h-[400px]">
       <ProductSchemaScript product={product} />
       <div className="relative">
         <Image

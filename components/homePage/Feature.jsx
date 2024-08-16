@@ -22,7 +22,7 @@ export default async function Feature({ lang }) {
             <p className="text-gray-500 text-sm">Order over $200</p>
           </div>
         </div>
-        <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+        <div className="border border-base rounded-sm px-3 py-6 flex justify-center items-center gap-5">
           <Image
             width={150}
             height={100}
@@ -37,7 +37,7 @@ export default async function Feature({ lang }) {
             <p className="text-gray-500 text-sm">30 days money returs</p>
           </div>
         </div>
-        <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+        <div className="border border-base rounded-sm px-3 py-6 flex justify-center items-center gap-5">
           <Image
             width={150}
             height={100}

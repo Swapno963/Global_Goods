@@ -15,7 +15,7 @@ module.exports = {
       lg: "992px",
       xl: "1200px",
       laptop: "1600px", // Custom for your laptop
-      monitor: "2133px",
+      monitor: "2133px", // Custom for your external monitor
     },
     container: {
       center: true,

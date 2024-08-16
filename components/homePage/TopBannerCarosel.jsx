@@ -44,7 +44,7 @@ export default function TopBannerCarosel({ slides }) {
   };
 
   return (
-    <div className="overflow-hidden relative max-h-[80%] ">
+    <div className="overflow-hidden relative laptop:max-h-[100%] monitor:max-h-[80%] ">
       <div style={styles.container}>
         {slides?.map((s) => {
           // <img style={styles.image} key={s} src={s} />
