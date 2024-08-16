@@ -6,7 +6,7 @@ This is a comprehensive e-commerce platform developed using Next.js, React, and 
 
 ## Live Site
 
-You can access the live site [here](https://global-goods-j1j856xxk-swapnos-projects.vercel.app/en).
+You can access the live site [here](https://global-goods-beryl.vercel.app/en).
 
 ## User Login
 
