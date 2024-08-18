@@ -12,7 +12,7 @@ export default async function page() {
         <p className="text-gray-600 font-medium">Account</p>
       </div>
 
-      <div className="min-h-96 container  items-start gap-6 pt-4 pb-16">
+      <div className=" container  items-start gap-6 pt-4 pb-16">
         {/* <!-- info --> */}
         <AccountArea session={session} ourUser={ourUser} />
       </div>
