@@ -26,7 +26,7 @@ export default function AccountArea({ session, ourUser }) {
   const [showS, setShowS] = useState(false);
   const [showB, setShowB] = useState(false);
   return (
-    <>
+    <div className="min-h-96 mt-12">
       <div className=" grid grid-cols-3 gap-4 mx-auto max-w-5xl">
         <div className="shadow rounded bg-white px-4 pt-6 pb-8">
           {/*For personal info */}
@@ -132,6 +132,6 @@ export default function AccountArea({ session, ourUser }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
