@@ -1,12 +1,20 @@
+import { calculateInvoice } from "@/utils/data-util";
+
 export default async function InvoicePdf({ allproduct, ourUser }) {
+  const invoiceData = calculateInvoice(allproduct, 10, 10);
+  console.log("the invoice data is ", invoiceData);
+
   return (
     <>
       <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
+        {/* invoice and global goods in summary */}
         <div class="flex justify-between  border-b pb-6 mb-6">
           <div>
             <h2 class="text-3xl font-bold text-gray-800">INVOICE</h2>
-            <p class="text-gray-600">Invoice #12345</p>
-            <p class="text-gray-600">August 18, 2024</p>
+            <p class="text-gray-600">
+              Invoice #{invoiceData?.randomfiveDegitNumber}
+            </p>
+            <p class="text-gray-600">{invoiceData?.todaysDate}</p>
           </div>
           <div class="text-right">
             <h3 class="text-xl font-semibold text-gray-800">Global Goods</h3>
@@ -66,15 +74,20 @@ export default async function InvoicePdf({ allproduct, ourUser }) {
           </table>
         </div>
 
+        {/* counting subtotal, tax, shipping and total */}
         <div class="flex justify-end mt-6">
           <div class="text-right">
             <div class="flex justify-between items-center">
               <span class="text-gray-600">Subtotal:</span>
-              <span class="font-semibold text-gray-800">$250.00</span>
+              <span class="font-semibold text-gray-800">
+                ${invoiceData?.productsPrice}
+              </span>
             </div>
             <div class="flex justify-between items-center">
               <span class="text-gray-600">Tax (10%):</span>
-              <span class="font-semibold text-gray-800">$25.00</span>
+              <span class="font-semibold text-gray-800">
+                ${invoiceData?.taxAmount}
+              </span>
             </div>
             <div class="flex justify-between items-center">
               <span class="text-gray-600">Shipping:</span>
@@ -82,7 +95,9 @@ export default async function InvoicePdf({ allproduct, ourUser }) {
             </div>
             <div class="border-t mt-2 pt-2 flex justify-between items-center">
               <span class="text-lg font-semibold text-gray-800">Total:</span>
-              <span class="text-lg font-semibold text-gray-800">$285.00</span>
+              <span class="text-lg font-semibold text-gray-800">
+                ${invoiceData?.total?.toFixed(2)}
+              </span>
             </div>
           </div>
         </div>
