@@ -3,6 +3,9 @@ import GeneratePdf from "./GeneratePdf";
 
 export default async function OrderSummery({ session }) {
   const products = await getProductForCheckout(session?.user?.email);
+
+  // console.log("the sesssion is ", session, "\n and products are : ", products);
+
   const ids = products?.map((pd) => pd?.pId);
   // console.log(ids);
   const allproduct = await getProductByIds(ids);

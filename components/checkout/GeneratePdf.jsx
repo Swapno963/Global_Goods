@@ -63,7 +63,7 @@ export default function GeneratePdf({ allproduct, userEmail }) {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4");
       const width = pdf.internal.pageSize.getWidth();
-      const height = (canvas.height * width) / canvas.width;
+      const height = (canvas.height * width) / canvas.width - 100;
       pdf.addImage(imgData, "PNG", 0, 0, width, height);
       const pdfBlob = await pdf.output("blob");
       pdf.save("Invoice.pdf");
@@ -90,7 +90,6 @@ export default function GeneratePdf({ allproduct, userEmail }) {
       </button>
       <div ref={invoicePdfRef}>
         <InvoicePdf allproduct={allproduct} />
-        {/* <div>dkklfdsk</div> */}
       </div>
     </>
   );
