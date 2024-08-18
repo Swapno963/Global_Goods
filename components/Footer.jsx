@@ -71,10 +71,10 @@ export default function Footer() {
               <p className="text-xl ">Bangladesh</p>
             </div>
           </div>
-          <h2 className="text-2xl font-semibold text-primary pb-4 pt-8">
+          <h2 className="text-2xl font-semibold text-primary pb-4 pt-6">
             Follow Us On
           </h2>
-          <div className="grid grid-cols-2 gap-4 ">
+          <div className="grid grid-cols-2 gap-4 mb-3">
             <div className="flex gap-3">
               <Image
                 width={150}
