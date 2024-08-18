@@ -61,7 +61,7 @@ export default async function Navbar() {
                 )}
                 <a
                   href="/account"
-                  className="text-center text-gray-100 hover:text-primary transition relative"
+                  className="text-center text-gray-100  transition relative"
                 >
                   <div className="text-2xl">
                     <i className="fa-regular fa-user"></i>
@@ -82,7 +82,7 @@ export default async function Navbar() {
                 <button className=" rounded-md  pl-7 py-3">
                   <a
                     href="/login"
-                    className=" font-bold text-gra hover:text-blue-600 transition"
+                    className=" font-bold text-gra hover:text-gray-300 transition"
                   >
                     Login
                   </a>

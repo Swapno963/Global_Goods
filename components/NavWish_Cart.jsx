@@ -21,12 +21,9 @@ export default function NavWish_Cart({ cartL, wishL }) {
       {/* wish list in navbar */}
       <a
         href="/wishList"
-        className="text-center text-gray-300 hover:text-primary transition relative flex justify-center items-center"
+        className="text-center  transition relative flex justify-center items-center"
       >
-        {/* <div className="text-2xl">
-          <i className="fa-regular fa-heart"></i>
-        </div> */}
-        <div className="text-xs leading-3 text-gray-300">Wishlist</div>
+        <div className="text-xs leading-3 text-white">Wishlist</div>
         <div
           className={`absolute right-[-23px] top-[${
             !myWish?.length ? "14px" : "-2px"
@@ -39,7 +36,7 @@ export default function NavWish_Cart({ cartL, wishL }) {
       {/* cart in navbar */}
       <a
         href="/cart"
-        className=" pl-3 text-center text-gray-300 hover:text-primary transition relative flex justify-center items-center"
+        className=" pl-3 text-center  transition relative flex justify-center items-center"
       >
         <div className="text-xs leading-3 text-gray-300">Cart</div>
         <div
