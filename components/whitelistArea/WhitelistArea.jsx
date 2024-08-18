@@ -7,7 +7,7 @@ export default async function WhitelistArea({ allproduct }) {
   const session = await auth();
   console.log(allproduct);
   return (
-    <>
+    <div className="min-h-96 my-12">
       <div className="container gap-6 pt-4 pb-16">
         {allproduct?.length == 0 && (
           <p className="pl-12 ml-12">
@@ -57,6 +57,6 @@ export default async function WhitelistArea({ allproduct }) {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

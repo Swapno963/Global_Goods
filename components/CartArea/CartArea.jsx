@@ -4,14 +4,14 @@ import Image from "next/image";
 export default function CartArea({ allproduct }) {
   // console.log(allproduct);
   return (
-    <>
+    <div className="min-h-96 my-12">
       <div className="container gap-6 pt-4 pb-16">
         {allproduct.length == 0 && (
           <p className="pl-12 ml-12">
             You Do not Have any product in you cart,
             <a href="/shop/" className="text-blue-600 font-bold">
               Click hear
-            </a>{" "}
+            </a>
             To add product in cart!
           </p>
         )}
@@ -55,6 +55,6 @@ export default function CartArea({ allproduct }) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
