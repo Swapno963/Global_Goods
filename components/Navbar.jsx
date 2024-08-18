@@ -90,7 +90,7 @@ export default async function Navbar() {
                 <button className=" rounded-md   py-3">
                   <a
                     href="/register"
-                    className=" font-bold text-gra hover:text-blue-600 transition"
+                    className=" font-bold text-gra hover:text-gray-300 transition"
                   >
                     Register
                   </a>
