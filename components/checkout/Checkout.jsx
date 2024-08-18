@@ -1,8 +1,10 @@
+import { replaceMongoIdInObject } from "@/utils/data-util";
 import Link from "next/link";
 import CheckoutForm from "./CheckoutForm";
 import OrderSummery from "./OrderSummery";
 
 export default function Checkout({ ourUser, session }) {
+  const ourNewUser = replaceMongoIdInObject(ourUser);
   return (
     <div className="container grid grid-cols-12 items-start pb-16 pt-4 gap-6">
       <div className="col-span-8 border border-gray-200 p-4 rounded">
@@ -12,7 +14,7 @@ export default function Checkout({ ourUser, session }) {
             Edit
           </Link>
         </div>
-        <CheckoutForm ourUser={ourUser} />
+        <CheckoutForm ourUser={ourNewUser} />
       </div>
 
       <OrderSummery session={session} />

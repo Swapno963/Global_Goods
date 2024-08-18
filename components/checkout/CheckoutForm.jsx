@@ -6,7 +6,7 @@ export default function CheckoutForm({ ourUser }) {
       <div className="space-y-4">
         <div className="grid grid-cols-2 gap-4"></div>
         <div>
-          <label htmlhtmlFor="fullName" className="text-gray-600">
+          <label htmlFor="fullName" className="text-gray-600">
             Full Name
           </label>
           <input
@@ -18,7 +18,7 @@ export default function CheckoutForm({ ourUser }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="shippingBy" className="text-gray-600">
+          <label htmlFor="shippingBy" className="text-gray-600">
             Shipping By
           </label>
           <input
@@ -30,7 +30,7 @@ export default function CheckoutForm({ ourUser }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="shippingAddress" className="text-gray-600">
+          <label htmlFor="shippingAddress" className="text-gray-600">
             Shipping Adddress
           </label>
           <input
@@ -42,7 +42,7 @@ export default function CheckoutForm({ ourUser }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="address" className="text-gray-600">
+          <label htmlFor="address" className="text-gray-600">
             Billing Address{" "}
           </label>
           <input
@@ -54,7 +54,7 @@ export default function CheckoutForm({ ourUser }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="billingNumber" className="text-gray-600">
+          <label htmlFor="billingNumber" className="text-gray-600">
             Billing Number
           </label>
           <input
@@ -66,7 +66,7 @@ export default function CheckoutForm({ ourUser }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="phone" className="text-gray-600">
+          <label htmlFor="phone" className="text-gray-600">
             Phone number
           </label>
           <input
@@ -78,7 +78,7 @@ export default function CheckoutForm({ ourUser }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="email" className="text-gray-600">
+          <label htmlFor="email" className="text-gray-600">
             Email address
           </label>
           <input
@@ -90,7 +90,7 @@ export default function CheckoutForm({ ourUser }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="billingName" className="text-gray-600">
+          <label htmlFor="billingName" className="text-gray-600">
             Billing Name
           </label>
           <input

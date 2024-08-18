@@ -56,7 +56,7 @@ export default function RegisterForm() {
           <form action="#" method="post" autoComplete="off" onSubmit={onSubmit}>
             <div className="space-y-2">
               <div>
-                <label htmlhtmlFor="name" className="text-gray-600 mb-2 block">
+                <label htmlFor="name" className="text-gray-600 mb-2 block">
                   Full Name
                 </label>
                 <input
@@ -68,7 +68,7 @@ export default function RegisterForm() {
                 />
               </div>
               <div>
-                <label htmlhtmlFor="email" className="text-gray-600 mb-2 block">
+                <label htmlFor="email" className="text-gray-600 mb-2 block">
                   Email address
                 </label>
                 <input
@@ -80,10 +80,7 @@ export default function RegisterForm() {
                 />
               </div>
               <div>
-                <label
-                  htmlhtmlFor="password"
-                  className="text-gray-600 mb-2 block"
-                >
+                <label htmlFor="password" className="text-gray-600 mb-2 block">
                   Password
                 </label>
                 <input
@@ -95,10 +92,7 @@ export default function RegisterForm() {
                 />
               </div>
               <div>
-                <label
-                  htmlhtmlFor="confirm"
-                  className="text-gray-600 mb-2 block"
-                >
+                <label htmlFor="confirm" className="text-gray-600 mb-2 block">
                   Confirm password
                 </label>
                 <input
@@ -137,7 +131,7 @@ export default function RegisterForm() {
                   className="text-primary focus:ring-0 rounded-sm cursor-pointer"
                 />
                 <label
-                  htmlhtmlFor="aggrement"
+                  htmlFor="aggrement"
                   className="text-gray-600 ml-3 cursor-pointer"
                 >
                   I have read and agree to the{" "}

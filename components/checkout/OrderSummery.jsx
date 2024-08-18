@@ -9,12 +9,19 @@ export default async function OrderSummery({ session }) {
   const products = await getProductForCheckout(session?.user?.email);
   const ourUser = await getAccountInfoByEmail(session?.user?.email);
 
-  // console.log("the sesssion is ", session, "\n and products are : ", products);
-
   const ids = products?.map((pd) => pd?.pId);
   // console.log(ids);
   const allproduct = await getProductByIds(ids);
-  // console.log(allproduct?.length);
+  const modifiedProducts = allproduct?.map(
+    ({ price, title, discount, size, brand }) => ({
+      price,
+      title,
+      discount,
+      size,
+      brand,
+    })
+  );
+  console.log(ourUser);
 
   const sum = allproduct.reduce(
     (accumulator, currentValue) => accumulator + currentValue?.price,
@@ -64,7 +71,7 @@ export default async function OrderSummery({ session }) {
           className="text-primary focus:ring-0 rounded-sm cursor-pointer w-3 h-3"
         />
         <label
-          htmlhtmlFor="aggrement"
+          htmlFor="aggrement"
           className="text-gray-600 ml-3 cursor-pointer text-sm"
         >
           I agree to the{" "}
@@ -76,7 +83,7 @@ export default async function OrderSummery({ session }) {
 
       <GeneratePdf
         ourUser={ourUser}
-        allproduct={allproduct}
+        allproduct={modifiedProducts}
         userEmail={session?.user?.email}
       />
     </div>
