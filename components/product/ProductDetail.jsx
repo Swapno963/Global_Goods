@@ -95,23 +95,6 @@ export default function ProductDetail({ product, session }) {
           {product?.title}
         </h2>
         <div className="flex items-center mb-4">
-          <div className="flex gap-1 text-sm text-yellow-400">
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-          </div>
           <div className="text-xs text-gray-500 ml-3">
             ({product?.reviewCount} Reviews)
           </div>
@@ -180,31 +163,10 @@ export default function ProductDetail({ product, session }) {
           {/* social shareing */}
           <p
             onClick={() => setShowModal(!showModal)}
-            className="border border-gray-300 bg-green-400 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-white transition"
+            className="border border-gray-300 bg-green-400 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary cursor-pointer transition"
           >
-            <i className="fa-solid fa-heart"></i> Share On Socials
+            <p className=" "></p> Share On Socials
           </p>
-        </div>
-
-        <div className="flex gap-3 mt-4">
-          <a
-            href="#"
-            className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
-          >
-            <i className="fa-brands fa-facebook-f"></i>
-          </a>
-          <a
-            href="#"
-            className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
-          >
-            <i className="fa-brands fa-twitter"></i>
-          </a>
-          <a
-            href="#"
-            className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
-          >
-            <i className="fa-brands fa-instagram"></i>
-          </a>
         </div>
       </div>
     </div>
