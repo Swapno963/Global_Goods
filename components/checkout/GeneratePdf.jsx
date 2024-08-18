@@ -8,7 +8,7 @@ import InvoicePdf from "./InvoicePdf";
 // for email
 import { Resend } from "resend";
 
-export default function GeneratePdf({ allproduct, userEmail }) {
+export default function GeneratePdf({ allproduct, userEmail, ourUser }) {
   const [download, setDownload] = useState();
   const [generatedpdf, setGeneratedPdf] = useState();
   const invoicePdfRef = useRef(null);
@@ -89,7 +89,7 @@ export default function GeneratePdf({ allproduct, userEmail }) {
         Check Our And Download Invoice
       </button>
       <div ref={invoicePdfRef}>
-        <InvoicePdf allproduct={allproduct} />
+        <InvoicePdf allproduct={allproduct} ourUser={ourUser} />
       </div>
     </>
   );

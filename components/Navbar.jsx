@@ -19,17 +19,17 @@ export default async function Navbar() {
     wishList = await getProductForNavbar(session?.user?.email);
   }
 
-  if (process.env.NODE_ENV === "development") {
-    console.log(
-      "from navbar",
-      session,
-      "cartList",
-      cartList,
-      "wishList\n:",
-      wishList
-    );
-  }
-  console.log("session?.user", session);
+  // if (process.env.NODE_ENV === "development") {
+  //   console.log(
+  //     "from navbar",
+  //     session,
+  //     "cartList",
+  //     cartList,
+  //     "wishList\n:",
+  //     wishList
+  //   );
+  // }
+  // console.log("session?.user", session);
 
   return (
     <>

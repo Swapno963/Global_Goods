@@ -1,6 +1,4 @@
-export default async function InvoicePdf({ allproduct }) {
-  console.log("products from invoice pdf:", allproduct);
-
+export default async function InvoicePdf({ allproduct, ourUser }) {
   return (
     <>
       <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
@@ -22,15 +20,15 @@ export default async function InvoicePdf({ allproduct }) {
           <div class="grid grid-cols-2 gap-8">
             <div>
               <h4 class="text-lg font-semibold text-gray-800">Billed To:</h4>
-              <p class="text-gray-600">Client Name</p>
-              <p class="text-gray-600">1234 Client Address</p>
-              <p class="text-gray-600">City, State, ZIP</p>
+              <p class="text-gray-600">{ourUser?.personal_name}</p>
+              <p class="text-gray-600">{ourUser?.billing_address}</p>
+              <p class="text-gray-600">{ourUser?.billing_phone_no}</p>
             </div>
             <div>
               <h4 class="text-lg font-semibold text-gray-800">Shipped To:</h4>
-              <p class="text-gray-600">Client Name</p>
-              <p class="text-gray-600">1234 Client Address</p>
-              <p class="text-gray-600">City, State, ZIP</p>
+              <p class="text-gray-600">{ourUser?.shipping_name}</p>
+              <p class="text-gray-600">{ourUser?.shipping_address}</p>
+              <p class="text-gray-600">{ourUser?.shipping_phone_no}</p>
             </div>
           </div>
         </div>

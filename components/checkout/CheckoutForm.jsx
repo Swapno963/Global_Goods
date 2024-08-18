@@ -1,4 +1,4 @@
-export default function CheckoutForm({ ourUser, session }) {
+export default function CheckoutForm({ ourUser }) {
   console.log("Our user from chekcoute form :", ourUser);
 
   return (
@@ -18,21 +18,28 @@ export default function CheckoutForm({ ourUser, session }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="company" className="text-gray-600">
-            Company
+          <label htmlhtmlFor="shippingBy" className="text-gray-600">
+            Shipping By
           </label>
           <input
+            value={ourUser?.shipping_name}
             type="text"
-            name="company"
-            id="company"
+            name="shippingBy"
+            id="shippingBy"
             className="input-box"
           />
         </div>
         <div>
-          <label htmlhtmlFor="region" className="text-gray-600">
-            Country/Region
+          <label htmlhtmlFor="shippingAddress" className="text-gray-600">
+            Shipping Adddress
           </label>
-          <input type="text" name="region" id="region" className="input-box" />
+          <input
+            value={ourUser?.shipping_address}
+            type="text"
+            name="shippingAddress"
+            id="shippingAddress"
+            className="input-box"
+          />
         </div>
         <div>
           <label htmlhtmlFor="address" className="text-gray-600">
@@ -47,10 +54,16 @@ export default function CheckoutForm({ ourUser, session }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="city" className="text-gray-600">
-            City
+          <label htmlhtmlFor="billingNumber" className="text-gray-600">
+            Billing Number
           </label>
-          <input type="text" name="city" id="city" className="input-box" />
+          <input
+            value={ourUser?.billing_phone_no}
+            type="text"
+            name="billingNumber"
+            id="billingNumber"
+            className="input-box"
+          />
         </div>
         <div>
           <label htmlhtmlFor="phone" className="text-gray-600">
@@ -77,13 +90,14 @@ export default function CheckoutForm({ ourUser, session }) {
           />
         </div>
         <div>
-          <label htmlhtmlFor="company" className="text-gray-600">
-            Company
+          <label htmlhtmlFor="billingName" className="text-gray-600">
+            Billing Name
           </label>
           <input
+            value={ourUser?.billing_name}
             type="text"
-            name="company"
-            id="company"
+            name="billingName"
+            id="billingName"
             className="input-box"
           />
         </div>

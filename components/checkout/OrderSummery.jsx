@@ -1,8 +1,13 @@
-import { getProductByIds, getProductForCheckout } from "@/database/queries";
+import {
+  getAccountInfoByEmail,
+  getProductByIds,
+  getProductForCheckout,
+} from "@/database/queries";
 import GeneratePdf from "./GeneratePdf";
 
 export default async function OrderSummery({ session }) {
   const products = await getProductForCheckout(session?.user?.email);
+  const ourUser = await getAccountInfoByEmail(session?.user?.email);
 
   // console.log("the sesssion is ", session, "\n and products are : ", products);
 
@@ -69,7 +74,11 @@ export default async function OrderSummery({ session }) {
         </label>
       </div>
 
-      <GeneratePdf allproduct={allproduct} userEmail={session?.user?.email} />
+      <GeneratePdf
+        ourUser={ourUser}
+        allproduct={allproduct}
+        userEmail={session?.user?.email}
+      />
     </div>
   );
 }
