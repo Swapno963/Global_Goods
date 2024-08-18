@@ -41,7 +41,6 @@ export default function SearchAndFilterArea({
     handelFilter();
   }, [filterOption]);
 
-  // console.log(filterOption);
   return (
     <div className="grid grid-cols-12 gap-4">
       <div className="col-span-4 bg-gray-200">

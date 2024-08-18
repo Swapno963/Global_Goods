@@ -29,7 +29,7 @@ export default function NavSearch() {
       />
       <button
         onClick={handelSearch}
-        className="bg-[#4d6ac8] hover:bg-[#5f78ce] border border-primary rounded-md ml-3 text-white px-8 py-3 font-bold rounded-r-md  hover:text-primary transition  md:flex"
+        className="bg-[#4d6ac8] hover:bg-[#5f78ce] border border-primary rounded-md ml-3 text-white px-8 py-3 font-bold rounded-r-md   transition  md:flex"
       >
         Search
       </button>
