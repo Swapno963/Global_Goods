@@ -4,6 +4,8 @@ import { useWishList } from "@/app/hooks/useWishList";
 import { useEffect } from "react";
 
 export default function NavWish_Cart({ cartL, wishL }) {
+  console.log("cartL, wishL", cartL, wishL);
+
   const { cart, setCart } = useCart();
   const { wishList, setWishList } = useWishList();
   useEffect(() => {
@@ -12,8 +14,8 @@ export default function NavWish_Cart({ cartL, wishL }) {
     if (wishL?.length > 0) setCart(wishL?.length);
     else setWishList(0);
     // setWishList(wishL?.length);
-  }, []);
-  console.log(cartL);
+  }, [cartL, wishL]);
+  // console.log(cartL);
 
   // const [myCart, setMyCart] = useState(cartL);
   // const [myWish, setMyWish] = useState(wishL);
@@ -36,7 +38,7 @@ export default function NavWish_Cart({ cartL, wishL }) {
         
            w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs`}
         >
-          {cart}
+          {wishList}
         </div>
       </a>
 
@@ -51,7 +53,7 @@ export default function NavWish_Cart({ cartL, wishL }) {
         
            w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs`}
         >
-          {wishList}
+          {cart}
         </div>
       </a>
     </>

@@ -14,6 +14,7 @@ export default async function Navbar() {
   const allCategoryData = await getAllCategory();
   let cartList;
   let wishList;
+
   if (session?.user) {
     cartList = await getProductForCheckout(session?.user?.email);
     wishList = await getProductForNavbar(session?.user?.email);
@@ -21,7 +22,7 @@ export default async function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-10 pt-3 bg-opacity-50 backdrop-blur-md">
+      <div className="fixed top-0 left-0 w-full z-10 bg-opacity-50 backdrop-blur-md">
         <div className=" w-full sm:w-4/5 mx-auto flex-row sm:flex sm:justify-around  justify-around items-center bg-base rounded-md md:py-6">
           <div className="flex justify-center">
             {/* <Image

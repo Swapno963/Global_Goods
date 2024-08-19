@@ -2,12 +2,12 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { login } from "../actions";
-import SocialLogins from "./SocialLogins";
 
 // for tost
 // for tost
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SocialLogins from "./SocialLogins";
 
 export default function LoginForm() {
   const [error, setError] = useState("");
