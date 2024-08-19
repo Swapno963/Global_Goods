@@ -5,9 +5,9 @@ import dbConnect from "@/service/mongo";
 import mongoose from "mongoose";
 
 export const POST = async (request) => {
-  const { userEmail, productId, quantity } = await request.json();
+  const { userEmail, productId, quantity = 1 } = await request.json();
 
-  // console.log(userEmail, productId);
+  console.log(userEmail, productId, quantity);
 
   await dbConnect();
 
