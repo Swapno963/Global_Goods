@@ -12,13 +12,13 @@ export default async function HomeArea({ lang }) {
   // console.log("All products are : ", products);
 
   return (
-    <>
+    <div className="mt-[100px] ">
       <Banner lang={lang} />
       <Feature lang={lang} />
       <Categories lang={lang} />
       <NewArriaival lang={lang} />
       <Ads />
       <Products lang={lang} />
-    </>
+    </div>
   );
 }

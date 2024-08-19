@@ -19,22 +19,10 @@ export default async function Navbar() {
     wishList = await getProductForNavbar(session?.user?.email);
   }
 
-  // if (process.env.NODE_ENV === "development") {
-  //   console.log(
-  //     "from navbar",
-  //     session,
-  //     "cartList",
-  //     cartList,
-  //     "wishList\n:",
-  //     wishList
-  //   );
-  // }
-  // console.log("session?.user", session);
-
   return (
     <>
-      <div>
-        <div className="w-full sm:w-4/5 mx-auto flex-row sm:flex sm:justify-around  justify-around items-center bg-base rounded-md md:py-6">
+      <div className="fixed top-0 left-0 w-full z-10 pt-3 bg-opacity-50 backdrop-blur-md">
+        <div className=" w-full sm:w-4/5 mx-auto flex-row sm:flex sm:justify-around  justify-around items-center bg-base rounded-md md:py-6">
           <div className="flex justify-center">
             {/* <Image
               width={120}

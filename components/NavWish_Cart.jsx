@@ -1,20 +1,27 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCart } from "@/app/hooks/useCart";
+import { useWishList } from "@/app/hooks/useWishList";
+import { useEffect } from "react";
 
 export default function NavWish_Cart({ cartL, wishL }) {
-  // const { cart, setCart } = useCart();
-  // const { wishList, setWishList } = useWishList();
-  // useEffect(() => {
-  //   setCart(cartL?.length);
-  //   setWishList(wishL?.length);
-  // }, []);
-  const [myCart, setMyCart] = useState(cartL);
-  const [myWish, setMyWish] = useState(wishL);
-
+  const { cart, setCart } = useCart();
+  const { wishList, setWishList } = useWishList();
   useEffect(() => {
-    setMyCart(cartL);
-    setMyWish(wishL);
-  }, [cartL, wishL]);
+    if (cartL?.length > 0) setCart(cartL?.length);
+    else setCart(0);
+    if (wishL?.length > 0) setCart(wishL?.length);
+    else setWishList(0);
+    // setWishList(wishL?.length);
+  }, []);
+  console.log(cartL);
+
+  // const [myCart, setMyCart] = useState(cartL);
+  // const [myWish, setMyWish] = useState(wishL);
+
+  // useEffect(() => {
+  //   setMyCart(cartL);
+  //   setMyWish(wishL);
+  // }, [cartL, wishL]);
 
   return (
     <>
@@ -25,11 +32,11 @@ export default function NavWish_Cart({ cartL, wishL }) {
       >
         <div className="text-xs leading-3 text-white">Wishlist</div>
         <div
-          className={`absolute right-[-23px] top-[${
-            !myWish?.length ? "14px" : "-2px"
-          }] w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs`}
+          className={`absolute right-[-23px] 
+        
+           w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs`}
         >
-          {!myWish?.length ? "0" : myWish?.length}
+          {cart}
         </div>
       </a>
 
@@ -40,11 +47,11 @@ export default function NavWish_Cart({ cartL, wishL }) {
       >
         <div className="text-xs leading-3 text-gray-300">Cart</div>
         <div
-          className={`absolute right-[-23px] top-[${
-            !myWish?.length ? "14px" : "-2px"
-          }] w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs`}
+          className={`absolute right-[-23px] 
+        
+           w-5 h-5 rounded-full flex items-center justify-center bg-white text-gray-800 text-xs`}
         >
-          {!myCart?.length ? "0" : myCart?.length}
+          {wishList}
         </div>
       </a>
     </>

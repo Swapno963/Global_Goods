@@ -28,9 +28,12 @@ export default function AddTooCart({ product, session, quantity }) {
             quantity: quantity,
           }),
         });
+        console.log("response of cart : ", res, "\n cart is :", cart);
+
         if (res.status === 201) {
           toast.success("Product Added To Cart");
           setCart((p) => p + 1);
+          // setCart(cart + 1);
           router.push("/checkout");
         }
       } catch (error) {
