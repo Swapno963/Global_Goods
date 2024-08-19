@@ -19,7 +19,7 @@ export async function doSignIn(byWhom = "facebook") {
 
 // login useing email and password
 export async function login({ email, password }) {
-  console.log("submitting form", email, password);
+  console.log("submitting form action:", email, password);
 
   try {
     const response = await signIn("credentials", {
@@ -27,8 +27,12 @@ export async function login({ email, password }) {
       password: password,
       redirect: false,
     });
+    console.log("action res:", response);
+
     return response;
   } catch (err) {
-    return err;
+    console.log("action er:", err.message);
+
+    throw err;
   }
 }

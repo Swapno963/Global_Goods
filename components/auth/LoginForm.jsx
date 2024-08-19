@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { login } from "../actions";
 import SocialLogins from "./SocialLogins";
 
@@ -9,6 +10,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginForm() {
+  const [error, setError] = useState("");
+
   const router = useRouter();
 
   async function onSubmit(event) {
@@ -28,7 +31,8 @@ export default function LoginForm() {
       router.push(redirect);
     } catch (error) {
       // toast.warn("Plese Register first!");
-      console.log(error);
+      // console.log(error);
+      setError("Please check your credintials!");
     }
   }
 
@@ -52,6 +56,8 @@ export default function LoginForm() {
     <>
       <ToastContainer />
       <div className="contain py-16">
+        <p className="text-xl text-red-500 text-center ">{error && error}</p>
+
         <div className="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
           <h2 className="text-2xl uppercase font-medium mb-1">Login</h2>
           <p className="text-gray-600 mb-6 text-sm">welcome back customer</p>
