@@ -36,15 +36,21 @@ export default function RegisterForm() {
           role,
         }),
       });
+      const data = await res.json();
       res.status === 201 && router.push("/login");
+      res.status === 409 && setError(data.message);
+
+      console.log("the response is :", data);
     } catch (error) {
+      console.log("the error is :", error);
+
       setError(error.message);
     }
   }
   return (
     <>
       <div className="contain py-16">
-        <div className="text-xl text-red-500 text-center">{error && error}</div>
+        <p className="text-xl text-red-500 text-center ">{error && error}</p>
 
         <div className="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden">
           <h2 className="text-2xl uppercase font-medium mb-1">
@@ -111,7 +117,7 @@ export default function RegisterForm() {
               <select
                 id="role"
                 name="role"
-                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
+                className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm  focus:ring-0 focus:border-primary placeholder-gray-400"
               >
                 <option value="vendor" className="my-2 text-md">
                   vendor
