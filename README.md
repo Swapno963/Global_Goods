@@ -140,7 +140,7 @@ The home page and product details pages are SEO-friendly
 
 ## Usage
 
-- Access the application at `http://localhost:5173/`
+- Access the application at `http://localhost:3000/`
 
 - Register a new user or login with existing credentials.
 
