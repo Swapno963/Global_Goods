@@ -99,3 +99,53 @@ The home page and product details pages are SEO-friendly
 
 - Product recomendation system where ml model will do it
 - User can run add besed on terget customer
+
+## set up and Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/Swapno963/Global_Goods.git
+
+   cd Global_Goods
+   ```
+
+2. Install dependencies:
+
+   ```sh
+
+   npm install
+   ```
+
+3. Create a `.env` file in the project root with the following content:
+
+   ```env
+   MONGODB_CONNECTION_STRING="Connection string of mongodb"
+
+   GOOGLE_CLIENT_ID="Google client id for authientication"
+
+   GOOGLE_CLIENT_SECRET="Google client secret for authientication"
+
+   AUTH_SECRET="Give a auth secret"
+
+   RESEND_API_KEY="Give resend api key"
+   ``
+
+   ```
+
+4. Run the development server:
+   ```sh
+   npm run dev
+   ```
+
+## Usage
+
+- Access the application at `http://localhost:5173/`
+
+- Register a new user or login with existing credentials.
+
+## Contact
+
+If you have any questions or feedback, feel free to contact me:
+
+- Swapno Mondol - [Linkedin](https://www.linkedin.com/in/swapno-mondol/)- [Facebook](https://www.facebook.com/profile.php?id=100090206887787) - swapno963@gmail.com
